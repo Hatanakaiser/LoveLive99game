@@ -27,8 +27,10 @@ function init() {
       td.onclick = mainClick;
       tr.appendChild(td);
       if (question[i][j] != 0) {
-        td.textContent = question[j][i];
-        td.classList.add("clickdisable");
+        if(question[i][j]==1){
+          document.write('<img src="μ's01.png">');
+          td.classList.add("clickdisable");
+        }
       } else {
         td.textContent = null;
         td.classList.add("clickenable");
