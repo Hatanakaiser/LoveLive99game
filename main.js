@@ -29,8 +29,10 @@ function init() {
       if (question[i][j] != 0) {
         if(question[i][j]==1){
           document.write('<img src="μ's01.png">');
-          td.classList.add("clickdisable");
+        }else{
+          td.textContent=question[i][j];
         }
+        td.classList.add("clickdisable");
       } else {
         td.textContent = null;
         td.classList.add("clickenable");
