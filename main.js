@@ -27,7 +27,7 @@ function init() {
       td.onclick = mainClick;
       tr.appendChild(td);
       if (question[i][j] != 0) {
-        td.textContent = question[i][j];
+        td.textContent = question[j][i];
         td.classList.add("clickdisable");
       } else {
         td.textContent = null;
