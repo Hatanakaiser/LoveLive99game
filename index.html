@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoveLive!Daysメンバープレイスクイズ♪</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <h1>LiveLive!Days<br>メンバープレイスクイズ♪</h1>
+                <select id="school">
+                    <option value="μ's">μ's</option>
+                    <option value="Aqours">Aqours</option>
+                    <option value="Nijigasaki" selected>虹ヶ咲</option>
+                </select>
+                <button onclick="buttonclick()">START</button>
+        <table class="main"></table>
+        <table class="select"></table>
+        <table>
+            <tr>
+                <td>
+                    <img src="Nijigasaki1.png" alt="">
+                </td>
+                <td>
+                    <img src="Nijigasaki2.png" alt="">
+                </td>
+                <td>
+                    <img src="Nijigasaki3.png" alt="">
+                </td>
+                <td>
+                    <img src="Nijigasaki4.png" alt="">
+                </td>
+                <td>
+                    <img src="Nijigasaki5.png" alt="">
+                </td>
+                <td>
+                    <img src="Nijigasaki6.png" alt="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" class="check_box" name="checkItem" id="item1" value="1"><label class="label" for="item1">上原歩夢</label>
+                </td>
+                <td>
+                    <input type="checkbox" class="check_box" name="checkItem" id="item2" value="2" checked><label class="label" for="item2">中須かすみ</label>
+                </td>
+                <td>
+                    <input type="checkbox" class="check_box" name="checkItem" id="item3" value="3" checked><label class="label" for="item3">桜坂しずく</label>
+                </td>
+                <td>
+                    <input type="checkbox" class="check_box" name="checkItem" id="item4" value="4" checked><label class="label" for="item4">朝香果林</label>
+                </td>
+                <td>
+                    <input type="checkbox" class="check_box" name="checkItem" id="item5" value="5" checked><label class="label" for="item5">宮下愛</label>
+                </td>
+                <td>
+                    <input type="checkbox" class="check_box" name="checkItem" id="item6" value="6" checked><label class="label" for="item6">近江彼方</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="Nijigasaki7.png" alt="">
+                </td>
+                <td>
+                    <img src="Nijigasaki8.png" alt="">
+                </td>
+                <td>
+                    <img src="Nijigasaki9.png" alt="">
+                </td>
+                <td>
+                    <img src="Nijigasaki10.png" alt="">
+                </td>
+                <td>
+                    <img src="Nijigasaki11.png" alt="">
+                </td>
+                <td>
+                    <img src="Nijigasaki12.png" alt="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" class="check_box" name="checkItem" id="item7" value="7" checked><label class="label" for="item7">優木せつ菜</label>
+                </td>
+                <td>
+                    <input type="checkbox" class="check_box" name="checkItem" id="item8" value="8"><label class="label" for="item8">エマ</label>
+                </td>
+                <td>
+                    <input type="checkbox" class="check_box" name="checkItem" id="item9" value="9"><label class="label" for="item9">天皇寺璃奈</label>
+                </td>
+                <td>
+                    <input type="checkbox" class="check_box" name="checkItem" id="item10" value="10" checked><label class="label" for="item10">三船栞子</label>
+                </td>
+                <td>
+                    <input type="checkbox" class="check_box" name="checkItem" id="item11" value="11" checked><label class="label" for="item11">ミア</label>
+                </td>
+                <td>
+                    <input type="checkbox" class="check_box" name="checkItem" id="item12" value="12" checked><label class="label" for="item12">鍾嵐珠</label>
+                </td>
+            </tr>
+        </table>
+            <div class="check" onclick="check()">正解チェック</div>
+        <h2></h2>
+    </main>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+
+</html>
