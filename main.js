@@ -115,6 +115,25 @@ const question = [
         break;
       }
     }
+    let sum=[[0,0,0],[0,0,0],[0,0,0]];
+    for(let i=0;i<3;i++){      
+      for(let j=0;j<3;j++){
+        for(let k=3*i;k<3*(i+1);k++){
+          for(let l=3*j;l<3*(j+1);l++){
+            let td=tr[l].querySelectorAll("td");
+            sum[i][j]+=Number(td[l].textContent);
+          }
+        }
+      }
+    }
+    for(let i=0;i<3;i++){
+      for(let j=0;j<3;j++){ 
+      if (sum[i][j] != 45) {
+        checkFlag = false;
+        break;
+        }
+      }
+    }
     if (checkFlag) {
       h2.textContent = "正解です!!";
     } else {
