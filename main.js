@@ -85,7 +85,7 @@ const question = [
     img.src=(selected_val.value+character[e.target.value-1]+".png");
     place.appendChild(img);
   }
-  
+}
   // 正解判定
   function check() {
     const h2 = document.querySelector("h2");
@@ -121,4 +121,3 @@ const question = [
       h2.textContent = "間違いがあります";
     }
   }
-}
