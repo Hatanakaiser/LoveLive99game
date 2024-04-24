@@ -121,7 +121,7 @@ const question = [
         for(let k=3*i;k<3*(i+1);k++){
           for(let l=3*j;l<3*(j+1);l++){
             let td=tr[l].querySelectorAll("td");
-            sum[i][j]+=Number(td[l].textContent);
+            sum[i][j]+=Number(td[k].textContent);
           }
         }
       }
