@@ -16,7 +16,40 @@
                     <option value="Aqours">Aqours</option>
                     <option value="Nijigasaki" selected>虹ヶ咲</option>
                 </select>
-                <button onclick="buttonclick()">START</button>
+                <button onclick="buttonclick(),who1(),who2(),who3(),who4(),place1(),place2(),place3()">START</button>
+                <div>
+                    <div>
+                        <select name="CheckPlace" id="who1">
+                            <option value="Non">誰</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select name="CheckPlace" id="who2">
+                            <option value="Non">誰</option>
+                        </select>
+                        の
+                        <select name="CheckPlace" id="place1">
+                            <option value="Non">何処にいる</option>
+                        </select>
+                    <div>
+                        <select name="CheckPlace" id="who3">
+                            <option value="Non">誰</option>
+                        </select>
+                        の
+                        <select name="CheckPlace" id="place2">
+                            <option value="Non">何処にいる</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select name="CheckPlace" id="who4">
+                            <option value="Non">誰</option>
+                        </select>
+                        の
+                        <select name="CheckPlace" id="place3">
+                            <option value="Non">何処にいる</option>
+                        </select>
+                    </div>
+                </div>
         <table class="main"></table>
         <table class="select"></table>
         <table>
@@ -101,7 +134,7 @@
                 </td>
             </tr>
         </table>
-            <div class="check" onclick="check()">正解チェック</div>
+            <div class="check" onclick="setting(),Check1(),Check2(),check()">正解チェック</div>
         <h2></h2>
     </main>
     <script type="text/javascript" src="main.js"></script>
