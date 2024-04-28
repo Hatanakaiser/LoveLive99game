@@ -46,6 +46,7 @@ let place;
 let B=[[],[],[],[],[],[],[],[],[]];
 for(let i=0;i<9;i++){
   for(let j=0;j<9;j++){
+    question[i][j]=0;
     CheckPlace5[i].push(0);
   }
 }
