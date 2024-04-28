@@ -1,15 +1,17 @@
 // 問題
+
 let question = [
-  [8, 7, 1, 0, 0, 0, 5, 6, 4],
-  [0, 9, 5, 0, 1, 7, 2, 3, 8],
-  [2, 0, 3, 4, 5, 8, 0, 7, 1],
-  [0, 2, 0, 1, 0, 3, 7, 9, 5],
-  [0, 1, 9, 2, 7, 0, 8, 4, 3],
-  [7, 0, 4, 0, 8, 5, 0, 0, 2],
-  [1, 5, 0, 0, 0, 4, 3, 8, 0],
-  [0, 8, 7, 5, 0, 0, 0, 0, 6],
-  [0, 0, 0, 0, 3, 2, 1, 0, 7],
+  [2, 0, 9, 3, 8, 0, 0, 6, 0],
+  [0, 8, 4, 0, 0, 6, 0, 7, 0],
+  [6, 0, 0, 0, 1, 2, 0, 0, 9],
+  [0, 7, 1, 2, 0, 0, 0, 8, 0],
+  [0, 0, 0, 0, 7, 0, 4, 0, 5],
+  [5, 4, 3, 6, 0, 8, 0, 0, 2],
+  [4, 0, 0, 0, 3, 0, 9, 0, 0],
+  [0, 0, 2, 8, 6, 0, 0, 5, 0],
+  [7, 0, 0, 5, 0, 9, 1, 0, 6],
 ];
+
 
 let A=[
       [[],[],[],[],[],[],[],[],[]],
@@ -22,20 +24,10 @@ let A=[
       [[],[],[],[],[],[],[],[],[]],
       [[],[],[],[],[],[],[],[],[]]
 ];
-for(let i=0;i<9;i++){
-  for(let j=0;j<9;j++){
-    if(question[i][j]==0){
-      for(let k=1;k<10;k++){
-        A[i][j].push(k);
-      }
-    }
-  }
-}
 
 let Final=[[],[],[],[],[],[],[],[],[]];
 for(let i=0;i<9;i++){
   for(let j=0;j<9;j++){
-    question[i][j]=0;
     Final[i][j]=question[i][j];
   }
 }
@@ -60,31 +52,6 @@ for(let i=0;i<9;i++){
 let Anser1;
 let Anser2;
 
-function buttonclick(){
-  selected_val = document.getElementById("school");
-  console.log(selected_val.value);
-  if(selected_val.value=="Nijigasaki"){
-    const checkboxes=document.querySelectorAll('input[name="checkItem"]:checked');
-    for(let i=0;i<9;i++){
-      character[i]=checkboxes[i].value;
-      CheckPlace1.push(Niji[checkboxes[i].value]);
-    }
-  }
-  if(selected_val.value=="μ's"){
-    for(let i=0;i<9;i++){
-      CheckPlace1.push(μ[i])
-    }
-  }
-  if(selected_val.value=="Aqours"){
-    for(let i=0;i<9;i++){
-      CheckPlace1.push(Aq[i]);
-    }
-  }
-  console.log(CheckPlace1);
-  console.log(question);
-
-  init();
-}
 
 // ゲーム画面生成
 function init() {
@@ -140,10 +107,38 @@ function selectClick(e) {
         Final[i][j]=e.target.value;
         let img=document.createElement("img");
         img.src=(selected_val.value+character[e.target.value-1]+".png");
-        place.appendChild(img);
+        B[i][j].appendChild(img);
       }
     }
   }
+  console.log(B);
+}
+
+//以下STARTを押したときに動く関数
+function buttonclick(){
+  selected_val = document.getElementById("school");
+  console.log(selected_val.value);
+  if(selected_val.value=="Nijigasaki"){
+    const checkboxes=document.querySelectorAll('input[name="checkItem"]:checked');
+    for(let i=0;i<9;i++){
+      character[i]=checkboxes[i].value;
+      CheckPlace1.push(Niji[checkboxes[i].value]);
+    }
+  }
+  if(selected_val.value=="μ's"){
+    for(let i=0;i<9;i++){
+      CheckPlace1.push(μ[i])
+    }
+  }
+  if(selected_val.value=="Aqours"){
+    for(let i=0;i<9;i++){
+      CheckPlace1.push(Aq[i]);
+    }
+  }
+  console.log(CheckPlace1);
+  console.log(question);
+
+  init();
 }
 
 function who1(){
@@ -247,6 +242,7 @@ function place3()
   }
 }
 
+//以下Checkを押したときに動く関数
 function setting(){
   CheckPlace3.splice(0);
   CheckPlace4.splice(0);
@@ -345,8 +341,8 @@ function Check2(){
   for(let i=0;i<9;i++){
     for(let j=0;j<9;j++){
       if(CheckPlace5[i][j]==1){
-        Anser1=i+1;
-        Anser2=String.fromCharCode(65+j);
+        Anser1=String.fromCharCode(65+j);
+        Anser2=i+1;
       }
     }
   }
@@ -403,7 +399,21 @@ function check() {
   if (checkFlag) {
     h2.textContent = "正解です!!"+Anser1+Anser2;
   } else {
-    h2.textContent = "間違いがあります";
+    h2.textContent = "間違いがあります"+Anser1+Anser2;
+  }
+}
+
+//以下GO!を押したときに動く関数
+function Copy(){
+  for (let i = 0; i < 9; i++) {
+    for (let j = 0; j < 9; j++) {
+      question[i][j]=Final[i][j];
+      if(question[i][j]==0){
+        for(let k=1;k<10;k++){
+          A[i][j].push(k);
+        }
+      }
+    }
   }
 }
 
@@ -437,12 +447,14 @@ function Anser(){
       for(let j=0;j<3;j++){
         for(let k=3*i;k<3*(i+1);k++){
           for(let l=3*j;l<3*(j+1);l++){
-            for(let m=3*j;m<3*(j+1);m++){
-              for(let n=0;n<A[k][m].length;n++){
-                if(A[k][m][n]==Final[k][l]){
-                  A[k][m].splice(n,1);
-                  if(A[k][m].length==1){
-                    Final[k][m]=A[k][m][0];
+            for(let m=3*i;m<3*(i+1);m++){
+              for(let n=3*j;n<3*(j+1);n++){
+                for(let o=0;o<A[m][n].length;o++){
+                  if(A[m][n][o]==Final[k][l]){
+                    A[m][n].splice(o,1);
+                    if(A[m][n].length==1){
+                      Final[m][n]=A[m][n][0];
+                    }
                   }
                 }
               }
@@ -461,9 +473,13 @@ function Anser(){
       clear=0;
     }
     count++;
+    if(count==10){
+      break;
+    }
   }
   console.log(Final);
   console.log(count);
+  console.log(A);
 }
 
 function change(){
@@ -478,11 +494,15 @@ function change(){
   }
 }
 
-function Copy(){
-  for (let i = 0; i < 9; i++) {
-    for (let j = 0; j < 9; j++) {
-      question[i][j]=Final[i][j];
+//以下Deleteを押したときに動く関数
+function Delete(){
+  for(let i=0;i<9;i++){
+    for(let j=0;j<9;j++){
+      if(place==B[i][j]){
+        B[i][j].lastElementChild.remove();
+        Final[i][j]=0;
+      }
     }
   }
+  console.log(Final);
 }
-

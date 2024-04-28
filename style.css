@@ -85,7 +85,16 @@ table{
     border-radius: 10px;
     text-align: center;
     font-size:30px;
-    width: 100px;
+    width: 120px;
+    height: 45px;
+}
+.GO{
+    margin: 0 0 0 auto;
+    border: 2px #6091d3 solid;
+    border-radius: 10px;
+    text-align: center;
+    font-size:30px;
+    width: 120px;
     height: 45px;
 }
 .check{
@@ -93,7 +102,7 @@ table{
     border-radius: 10px;
     text-align: center;
     font-size:30px;
-    width: 200px;
+    width: 120px;
     height: 45px;
 }
 img{
