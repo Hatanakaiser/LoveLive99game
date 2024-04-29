@@ -74,7 +74,7 @@ table{
     text-align: center;
     font-size:30px;
     width: 60px;
-    height: 45px;
+    height: 60px;
 }
 .mainClick{
     background-color: #f3ece3;
@@ -107,4 +107,24 @@ table{
 }
 img{
     width:47px;
+}
+select{
+    height: 30px;
+    border: 2px #6091d3 solid;
+    font-size: 15px;
+    border-radius: 10px;
+    text-align: center;
+    margin:3px 0;
+}
+.CharacterSelect td{
+    width: 80px;
+    margin: 5px 1px 0 1px;
+    font-size: 20px;
+}
+hr{
+    margin: 5px 0;
+    border-top: 3px solid #6091d3;
+}
+.SelectNumber{
+    background-size: cover;
 }

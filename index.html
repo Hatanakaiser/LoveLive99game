@@ -12,9 +12,10 @@
     <main>
         <h1>LiveLive!Days<br>メンバープレイスクイズ♪</h1>
         <select id="school">
-            <option value="μ's"selected>μ's</option>
+            <option value="μs"selected>μ's</option>
             <option value="Aqours">Aqours</option>
             <option value="Nijigasaki" >虹ヶ咲</option>
+            <option value="Liella">Liella</option>
         </select>
         <button onclick="buttonclick(),who1(),who2(),who3(),who4(),place1(),place2(),place3()">START</button>
         <div>
@@ -53,7 +54,16 @@
 
         <table class="main"></table>
         <table class="select"></table>
-        <table>
+
+        <div class="box">
+            <div class="check" onclick="setting(),Check1(),Check2(),check()">Check</div>
+            <div class="remove" onclick="Delete()">Delete</div>
+            <div class="GO" onclick="Copy(),Anser(),change()">GO!</div>
+        </div>
+        <h2></h2>
+        <hr>
+        <h2>虹ヶ咲学園キャラ選択</h2>
+        <table class="CharacterSelect">
             <tr>
                 <td>
                     <img src="Nijigasaki1.png" alt="">
@@ -76,22 +86,22 @@
             </tr>
             <tr>
                 <td>
-                    <input type="checkbox" class="check_box" name="checkItem" id="item1" value="1" ><label class="label" for="item1">上原歩夢</label>
+                    <input type="checkbox" class="check_box" name="NijiCheck" id="NijiCheck1" value="1" ><label class="label" for="NijiCheck1">歩夢</label>
                 </td>
                 <td>
-                    <input type="checkbox" class="check_box" name="checkItem" id="item2" value="2" ><label class="label" for="item2">中須かすみ</label>
+                    <input type="checkbox" class="check_box" name="NijiCheck" id="NijiCheck2" value="2" ><label class="label" for="NijiCheck2">かすみ</label>
                 </td>
                 <td>
-                    <input type="checkbox" class="check_box" name="checkItem" id="item3" value="3" ><label class="label" for="item3">桜坂しずく</label>
+                    <input type="checkbox" class="check_box" name="NijiCheck" id="NijiCheck3" value="3" ><label class="label" for="NijiCheck3">しずく</label>
                 </td>
                 <td>
-                    <input type="checkbox" class="check_box" name="checkItem" id="item4" value="4" ><label class="label" for="item4">朝香果林</label>
+                    <input type="checkbox" class="check_box" name="NijiCheck" id="NijiCheck4" value="4" ><label class="label" for="NijiCheck4">果林</label>
                 </td>
                 <td>
-                    <input type="checkbox" class="check_box" name="checkItem" id="item5" value="5" ><label class="label" for="item5">宮下愛</label>
+                    <input type="checkbox" class="check_box" name="NijiCheck" id="NijiCheck5" value="5" ><label class="label" for="NijiCheck5">愛</label>
                 </td>
                 <td>
-                    <input type="checkbox" class="check_box" name="checkItem" id="item6" value="6" ><label class="label" for="item6">近江彼方</label>
+                    <input type="checkbox" class="check_box" name="NijiCheck" id="NijiCheck6" value="6" ><label class="label" for="NijiCheck6">彼方</label>
                 </td>
             </tr>
             <tr>
@@ -116,32 +126,105 @@
             </tr>
             <tr>
                 <td>
-                    <input type="checkbox" class="check_box" name="checkItem" id="item7" value="7" ><label class="label" for="item7">優木せつ菜</label>
+                    <input type="checkbox" class="check_box" name="NijiCheck" id="NijiCheck7" value="7" ><label class="label" for="NijiCheck7">せつ菜</label>
                 </td>
                 <td>
-                    <input type="checkbox" class="check_box" name="checkItem" id="item8" value="8" ><label class="label" for="item8">エマ</label>
+                    <input type="checkbox" class="check_box" name="NijiCheck" id="NijiCheck8" value="8" ><label class="label" for="NijiCheck8">エマ</label>
                 </td>
                 <td>
-                    <input type="checkbox" class="check_box" name="checkItem" id="item9" value="9" ><label class="label" for="item9">天皇寺璃奈</label>
+                    <input type="checkbox" class="check_box" name="NijiCheck" id="NijiCheck9" value="9" ><label class="label" for="NijiCheck9">璃奈</label>
                 </td>
                 <td>
-                    <input type="checkbox" class="check_box" name="checkItem" id="item10" value="10" ><label class="label" for="item10">三船栞子</label>
+                    <input type="checkbox" class="check_box" name="NijiCheck" id="NijiCheck10" value="10" ><label class="label" for="NijiCheck10">栞子</label>
                 </td>
                 <td>
-                    <input type="checkbox" class="check_box" name="checkItem" id="item11" value="11" ><label class="label" for="item11">ミア</label>
+                    <input type="checkbox" class="check_box" name="NijiCheck" id="NijiCheck11" value="11" ><label class="label" for="NijiCheck11">ミア</label>
                 </td>
                 <td>
-                    <input type="checkbox" class="check_box" name="checkItem" id="item12" value="12" ><label class="label" for="item12">鍾嵐珠</label>
+                    <input type="checkbox" class="check_box" name="NijiCheck" id="NijiCheck12" value="12" ><label class="label" for="NijiCheck12">嵐珠</label>
                 </td>
             </tr>
         </table>
-
-        <div class="box">
-            <div class="check" onclick="setting(),Check1(),Check2(),check()">Check</div>
-            <div class="remove" onclick="Delete()">Delete</div>
-            <div class="GO" onclick="Copy(),Anser(),change()">GO!</div>
-        </div>
-        <h2></h2>
+        <hr>
+        <h2>Liellaキャラ選択</h2>
+        <table class="CharacterSelect">
+            <tr>
+                <td>
+                    <img src="Liella1.png" alt="">
+                </td>
+                <td>
+                    <img src="Liella2.png" alt="">
+                </td>
+                <td>
+                    <img src="Liella3.png" alt="">
+                </td>
+                <td>
+                    <img src="Liella4.png" alt="">
+                </td>
+                <td>
+                    <img src="Liella5.png" alt="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" class="check_box" name="LiellaCheck" id="LiellaCheck1" value="1" ><label class="label" for="LiellaCheck1">かのん</label>
+                </td>
+                <td>
+                    <input type="checkbox" class="check_box" name="LiellaCheck" id="LiellaCheck2" value="2" ><label class="label" for="LiellaCheck2">可可</label>
+                </td>
+                <td>
+                    <input type="checkbox" class="check_box" name="LiellaCheck" id="LiellaCheck3" value="3" ><label class="label" for="LiellaCheck3">千砂都</label>
+                </td>
+                <td>
+                    <input type="checkbox" class="check_box" name="LiellaCheck" id="LiellaCheck4" value="4" ><label class="label" for="LiellaCheck4">すみれ</label>
+                </td>
+                <td>
+                    <input type="checkbox" class="check_box" name="LiellaCheck" id="LiellaCheck5" value="5" ><label class="label" for="LiellaCheck5">恋</label>
+                </td>
+            </tr>
+        </table>
+        <table class="CharacterSelect">
+            <tr>
+                <td>
+                    <img src="Liella6.png" alt="">
+                </td>
+                <td>
+                    <img src="Liella7.png" alt="">
+                </td>
+                <td>
+                    <img src="Liella8.png" alt="">
+                </td>
+                <td>
+                    <img src="Liella9.png" alt="">
+                </td>
+                <td>
+                    <img src="Liella10.png" alt="">
+                </td>
+                <td>
+                    <img src="Liella11.png" alt="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" class="check_box" name="LiellaCheck" id="LiellaCheck6" value="6" ><label class="label" for="LiellaCheck6">きな子</label>
+                </td>
+                <td>
+                    <input type="checkbox" class="check_box" name="LiellaCheck" id="LiellaCheck7" value="7" ><label class="label" for="LiellaCheck7">メイ</label>
+                </td>
+                <td>
+                    <input type="checkbox" class="check_box" name="LiellaCheck" id="LiellaCheck8" value="8" ><label class="label" for="LiellaCheck8">四季</label>
+                </td>
+                <td>
+                    <input type="checkbox" class="check_box" name="LiellaCheck" id="LiellaCheck9" value="9" ><label class="label" for="LiellaCheck9">夏美</label>
+                </td>
+                <td>
+                    <input type="checkbox" class="check_box" name="LiellaCheck" id="LiellaCheck10" value="10" ><label class="label" for="LiellaCheck10">マルガレーテ</label>
+                </td>
+                <td>
+                    <input type="checkbox" class="check_box" name="LiellaCheck" id="LiellaCheck11" value="11" ><label class="label" for="LiellaCheck11">冬毬</label>
+                </td>
+            </tr>
+        </table>
     </main>
     <script type="text/javascript" src="main.js"></script>
 </body>

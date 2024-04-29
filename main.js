@@ -1,16 +1,5 @@
 // 問題
-
-let question = [
-  [2, 0, 9, 3, 8, 0, 0, 6, 0],
-  [0, 8, 4, 0, 0, 6, 0, 7, 0],
-  [6, 0, 0, 0, 1, 2, 0, 0, 9],
-  [0, 7, 1, 2, 0, 0, 0, 8, 0],
-  [0, 0, 0, 0, 7, 0, 4, 0, 5],
-  [5, 4, 3, 6, 0, 8, 0, 0, 2],
-  [4, 0, 0, 0, 3, 0, 9, 0, 0],
-  [0, 0, 2, 8, 6, 0, 0, 5, 0],
-  [7, 0, 0, 5, 0, 9, 1, 0, 6],
-];
+let question =[[],[],[],[],[],[],[],[],[]];
 
 
 let A=[
@@ -28,6 +17,7 @@ let A=[
 let Final=[[],[],[],[],[],[],[],[],[]];
 for(let i=0;i<9;i++){
   for(let j=0;j<9;j++){
+    question[i][j]=0;
     Final[i][j]=question[i][j];
   }
 }
@@ -37,6 +27,7 @@ let selected_val = document.getElementById("school");
 let μ=['穂乃果','絵里','ことり','海未','凛','真姫','希','花陽','にこ'];
 let Aq=['千歌','梨子','果南','ダイヤ','曜','善子','花丸','鞠莉','ルビィ'];
 let Niji=['侑','歩夢','かすみ','しずく','果林','愛','彼方','せつ菜','エマ','璃奈','栞子','ミア','嵐珠'];
+let Liella=['侑','かのん','可可','千砂都','すみれ','恋','きな子','メイ','四季','夏美','マルガレーテ','冬毬'];
 let CheckPlace1=[];
 let CheckPlace2=['隣にいる','隣にいない','周辺にいる','周辺にいない'];
 let CheckPlace3=[];
@@ -44,9 +35,10 @@ let CheckPlace4=[];
 let CheckPlace5=[[],[],[],[],[],[],[],[],[]];
 let place;
 let B=[[],[],[],[],[],[],[],[],[]];
+let C=[];
+let SelectNumber;
 for(let i=0;i<9;i++){
   for(let j=0;j<9;j++){
-    question[i][j]=0;
     CheckPlace5[i].push(0);
   }
 }
@@ -67,9 +59,139 @@ function init() {
       tr.appendChild(td);
       if (question[i][j] != 0) {
         td.classList.add("clickdisable");
-        let img=document.createElement("img");
-        img.src=(selected_val.value+character[question[i][j]-1]+".png");
-        td.appendChild(img);
+        if(selected_val.value=="μs"){
+          if(Final[i][j]==1){
+            B[i][j].style.backgroundImage="url(μs1.png)";
+          }
+          if(Final[i][j]==2){
+            B[i][j].style.backgroundImage="url(μs2.png)";
+          }
+          if(Final[i][j]==3){
+            B[i][j].style.backgroundImage="url(μs3.png)";
+          }
+          if(Final[i][j]==4){
+            B[i][j].style.backgroundImage="url(μs4.png)";
+          }
+          if(Final[i][j]==5){
+            B[i][j].style.backgroundImage="url(μs5.png)";
+          }
+          if(Final[i][j]==6){
+            B[i][j].style.backgroundImage="url(μs6.png)";
+          }
+          if(Final[i][j]==7){
+            B[i][j].style.backgroundImage="url(μs7.png)";
+          }
+          if(Final[i][j]==8){
+            B[i][j].style.backgroundImage="url(μs8.png)";
+          }
+          if(Final[i][j]==9){
+            B[i][j].style.backgroundImage="url(μs9.png)";
+          }
+        }
+        if(selected_val.value=="Aqours"){
+          if(Final[i][j]==1){
+            B[i][j].style.backgroundImage="url(Aqours1.png)";
+          }
+          if(Final[i][j]==2){
+            B[i][j].style.backgroundImage="url(Aqours2.png)";
+          }
+          if(Final[i][j]==3){
+            B[i][j].style.backgroundImage="url(Aqours3.png)";
+          }
+          if(Final[i][j]==4){
+            B[i][j].style.backgroundImage="url(Aqours4.png)";
+          }
+          if(Final[i][j]==5){
+            B[i][j].style.backgroundImage="url(Aqours5.png)";
+          }
+          if(Final[i][j]==6){
+            B[i][j].style.backgroundImage="url(Aqours6.png)";
+          }
+          if(Final[i][j]==7){
+            B[i][j].style.backgroundImage="url(Aqours7.png)";
+          }
+          if(Final[i][j]==8){
+            B[i][j].style.backgroundImage="url(Aqours8.png)";
+          }
+          if(Final[i][j]==9){
+            B[i][j].style.backgroundImage="url(Aqours9.png)";
+          }
+        }
+        if(selected_val.value=="Nijigasaki"){
+          if(character[Final[i][j]-1]==1){
+            B[i][j].style.backgroundImage="url(Nijigasaki1.png)";
+          }
+          if(character[Final[i][j]-1]==2){
+            B[i][j].style.backgroundImage="url(Nijigasaki2.png)";
+          }
+          if(character[Final[i][j]-1]==3){
+            B[i][j].style.backgroundImage="url(Nijigasaki3.png)";
+          }
+          if(character[Final[i][j]-1]==4){
+            B[i][j].style.backgroundImage="url(Nijigasaki4.png)";
+          }
+          if(character[Final[i][j]-1]==5){
+            B[i][j].style.backgroundImage="url(Nijigasaki5.png)";
+          }
+          if(character[Final[i][j]-1]==6){
+            B[i][j].style.backgroundImage="url(Nijigasaki6.png)";
+          }
+          if(character[Final[i][j]-1]==7){
+            B[i][j].style.backgroundImage="url(Nijigasaki7.png)";
+          }
+          if(character[Final[i][j]-1]==8){
+            B[i][j].style.backgroundImage="url(Nijigasaki8.png)";
+          }
+          if(character[Final[i][j]-1]==9){
+            B[i][j].style.backgroundImage="url(Nijigasaki9.png)";
+          }
+          if(character[Final[i][j]-1]==10){
+            B[i][j].style.backgroundImage="url(Nijigasaki10.png)";
+          }
+          if(character[Final[i][j]-1]==11){
+            B[i][j].style.backgroundImage="url(Nijigasaki11.png)";
+          }
+          if(character[Final[i][j]-1]==12){
+            B[i][j].style.backgroundImage="url(Nijigasaki12.png)";
+          }
+        }
+        if(selected_val.value=="Liella"){
+          if(character[Final[i][j]-1]==1){
+            B[i][j].style.backgroundImage="url(Liella1.png)";
+          }
+          if(character[Final[i][j]-1]==2){
+            B[i][j].style.backgroundImage="url(Liella2.png)";
+          }
+          if(character[Final[i][j]-1]==3){
+            B[i][j].style.backgroundImage="url(Liella3.png)";
+          }
+          if(character[Final[i][j]-1]==4){
+            B[i][j].style.backgroundImage="url(Liella4.png)";
+          }
+          if(character[Final[i][j]-1]==5){
+            B[i][j].style.backgroundImage="url(Liella5.png)";
+          }
+          if(character[Final[i][j]-1]==6){
+            CB[i][j].style.backgroundImage="url(Liella6.png)";
+          }
+          if(character[Final[i][j]-1]==7){
+            B[i][j].style.backgroundImage="url(Liella7.png)";
+          }
+          if(character[Final[i][j]-1]==8){
+            B[i][j].style.backgroundImage="url(Liella8.png)";
+          }
+          if(character[Final[i][j]-1]==9){
+            B[i][j].style.backgroundImage="url(Liella9.png)";
+          }
+          if(character[Final[i][j]-1]==10){
+            B[i][j].style.backgroundImage="url(Liella10.png)";
+          }
+          if(character[Final[i][j]-1]==11){
+            B[i][j].style.backgroundImage="url(Liella11.png)";
+          }
+        }
+        B[i][j].style.backgroundSize="cover";
+        B[i][j].style.backgroundRepeat="no-repeat";
       } else {
         td.textContent = null;
         td.classList.add("clickenable");
@@ -80,13 +202,143 @@ function init() {
 
   for (let i = 0; i < 9; i++) {
     let td = document.createElement("td");
+    C[i]=td;
     td.onclick = selectClick;
-    td.value = i + 1;
+    td.value =i+1;
     select.appendChild(td);
-    td.textContent = i + 1;
-    let img=document.createElement("img");
-    img.src=(selected_val.value+character[i]+".png");
-    td.appendChild(img);
+    if(selected_val.value=="μs"){
+      if(i==0){
+        C[i].style.backgroundImage="url(μs1.png)";
+      }
+      if(i==1){
+        C[i].style.backgroundImage="url(μs2.png)";
+      }
+      if(i==2){
+        C[i].style.backgroundImage="url(μs3.png)";
+      }
+      if(i==3){
+        C[i].style.backgroundImage="url(μs4.png)";
+      }
+      if(i==4){
+        C[i].style.backgroundImage="url(μs5.png)";
+      }
+      if(i==5){
+        C[i].style.backgroundImage="url(μs6.png)";
+      }
+      if(i==6){
+        C[i].style.backgroundImage="url(μs7.png)";
+      }
+      if(i==7){
+        C[i].style.backgroundImage="url(μs8.png)";
+      }
+      if(i==8){
+        C[i].style.backgroundImage="url(μs9.png)";
+      }
+    }
+    if(selected_val.value=="Aqours"){
+      if(i==0){
+        C[i].style.backgroundImage="url(Aqours1.png)";
+      }
+      if(i==1){
+        C[i].style.backgroundImage="url(Aqours2.png)";
+      }
+      if(i==2){
+        C[i].style.backgroundImage="url(Aqours3.png)";
+      }
+      if(i==3){
+        C[i].style.backgroundImage="url(Aqours4.png)";
+      }
+      if(i==4){
+        C[i].style.backgroundImage="url(Aqours5.png)";
+      }
+      if(i==5){
+        C[i].style.backgroundImage="url(Aqours6.png)";
+      }
+      if(i==6){
+        C[i].style.backgroundImage="url(Aqours7.png)";
+      }
+      if(i==7){
+        C[i].style.backgroundImage="url(Aqours8.png)";
+      }
+      if(i==8){
+        C[i].style.backgroundImage="url(Aqours9.png)";
+      }
+    }
+    if(selected_val.value=="Nijigasaki"){
+      if(character[i]==1){
+        C[i].style.backgroundImage="url(Nijigasaki1.png)";
+      }
+      if(character[i]==2){
+        C[i].style.backgroundImage="url(Nijigasaki2.png)";
+      }
+      if(character[i]==3){
+        C[i].style.backgroundImage="url(Nijigasaki3.png)";
+      }
+      if(character[i]==4){
+        C[i].style.backgroundImage="url(Nijigasaki4.png)";
+      }
+      if(character[i]==5){
+        C[i].style.backgroundImage="url(Nijigasaki5.png)";
+      }
+      if(character[i]==6){
+        C[i].style.backgroundImage="url(Nijigasaki6.png)";
+      }
+      if(character[i]==7){
+        C[i].style.backgroundImage="url(Nijigasaki7.png)";
+      }
+      if(character[i]==8){
+        C[i].style.backgroundImage="url(Nijigasaki8.png)";
+      }
+      if(character[i]==9){
+        C[i].style.backgroundImage="url(Nijigasaki9.png)";
+      }
+      if(character[i]==10){
+        C[i].style.backgroundImage="url(Nijigasaki10.png)";
+      }
+      if(character[i]==11){
+        C[i].style.backgroundImage="url(Nijigasaki11.png)";
+      }
+      if(character[i]==12){
+        C[i].style.backgroundImage="url(Nijigasaki12.png)";
+      }
+    }
+    if(selected_val.value=="Liella"){
+      if(character[i]==1){
+        C[i].style.backgroundImage="url(Liella1.png)";
+      }
+      if(character[i]==2){
+        C[i].style.backgroundImage="url(Liella2.png)";
+      }
+      if(character[i]==3){
+        C[i].style.backgroundImage="url(Liella3.png)";
+      }
+      if(character[i]==4){
+        C[i].style.backgroundImage="url(Liella4.png)";
+      }
+      if(character[i]==5){
+        C[i].style.backgroundImage="url(Liella5.png)";
+      }
+      if(character[i]==6){
+        C[i].style.backgroundImage="url(Liella6.png)";
+      }
+      if(character[i]==7){
+        C[i].style.backgroundImage="url(Liella7.png)";
+      }
+      if(character[i]==8){
+        C[i].style.backgroundImage="url(Liella8.png)";
+      }
+      if(character[i]==9){
+        C[i].style.backgroundImage="url(Liella9.png)";
+      }
+      if(character[i]==10){
+        C[i].style.backgroundImage="url(Liella10.png)";
+      }
+      if(character[i]==11){
+        C[i].style.backgroundImage="url(Liella11.png)";
+      }
+    }
+    C[i].style.backgroundSize="cover";
+    C[i].style.backgroundRepeat="no-repeat";
   }
 }
 
@@ -103,16 +355,151 @@ function mainClick(e) {
 // 数字選択のマスが押された時の処理
 function selectClick(e) {
   for(let i=0;i<9;i++){
+    if(e.target==C[i]){
+      SelectNumber=i+1;
+      console.log(SelectNumber);
+    }
+  }
+  for(let i=0;i<9;i++){
     for(let j=0;j<9;j++){
       if(place==B[i][j]){
-        Final[i][j]=e.target.value;
-        let img=document.createElement("img");
-        img.src=(selected_val.value+character[e.target.value-1]+".png");
-        B[i][j].appendChild(img);
+        Final[i][j]=SelectNumber;
+        if(selected_val.value=="μs"){
+          if(SelectNumber==1){
+            B[i][j].style.backgroundImage="url(μs1.png)";
+          }
+          if(SelectNumber==2){
+            B[i][j].style.backgroundImage="url(μs2.png)";
+          }
+          if(SelectNumber==3){
+            B[i][j].style.backgroundImage="url(μs3.png)";
+          }
+          if(SelectNumber==4){
+            B[i][j].style.backgroundImage="url(μs4.png)";
+          }
+          if(SelectNumber==5){
+            B[i][j].style.backgroundImage="url(μs5.png)";
+          }
+          if(SelectNumber==6){
+            B[i][j].style.backgroundImage="url(μs6.png)";
+          }
+          if(SelectNumber==7){
+            B[i][j].style.backgroundImage="url(μs7.png)";
+          }
+          if(SelectNumber==8){
+            B[i][j].style.backgroundImage="url(μs8.png)";
+          }
+          if(SelectNumber==9){
+            B[i][j].style.backgroundImage="url(μs9.png)";
+          }
+        }
+        if(selected_val.value=="Aqours"){
+          if(SelectNumber==1){
+            B[i][j].style.backgroundImage="url(Aqours1.png)";
+          }
+          if(SelectNumber==2){
+            B[i][j].style.backgroundImage="url(Aqours2.png)";
+          }
+          if(SelectNumber==3){
+            B[i][j].style.backgroundImage="url(Aqours3.png)";
+          }
+          if(SelectNumber==4){
+            B[i][j].style.backgroundImage="url(Aqours4.png)";
+          }
+          if(SelectNumber==5){
+            B[i][j].style.backgroundImage="url(Aqours5.png)";
+          }
+          if(SelectNumber==6){
+            B[i][j].style.backgroundImage="url(Aqours6.png)";
+          }
+          if(SelectNumber==7){
+            B[i][j].style.backgroundImage="url(Aqours7.png)";
+          }
+          if(SelectNumber==8){
+            B[i][j].style.backgroundImage="url(Aqours8.png)";
+          }
+          if(SelectNumber==9){
+            B[i][j].style.backgroundImage="url(Aqours9.png)";
+          }
+        }
+        if(selected_val.value=="Nijigasaki"){
+          if(character[SelectNumber-1]==1){
+            B[i][j].style.backgroundImage="url(Nijigasaki1.png)";
+          }
+          if(character[SelectNumber-1]==2){
+            B[i][j].style.backgroundImage="url(Nijigasaki2.png)";
+          }
+          if(character[SelectNumber-1]==3){
+            B[i][j].style.backgroundImage="url(Nijigasaki3.png)";
+          }
+          if(character[SelectNumber-1]==4){
+            B[i][j].style.backgroundImage="url(Nijigasaki4.png)";
+          }
+          if(character[SelectNumber-1]==5){
+            B[i][j].style.backgroundImage="url(Nijigasaki5.png)";
+          }
+          if(character[SelectNumber-1]==6){
+            B[i][j].style.backgroundImage="url(Nijigasaki6.png)";
+          }
+          if(character[SelectNumber-1]==7){
+            B[i][j].style.backgroundImage="url(Nijigasaki7.png)";
+          }
+          if(character[SelectNumber-1]==8){
+            B[i][j].style.backgroundImage="url(Nijigasaki8.png)";
+          }
+          if(character[SelectNumber-1]==9){
+            B[i][j].style.backgroundImage="url(Nijigasaki9.png)";
+          }
+          if(character[SelectNumber-1]==10){
+            B[i][j].style.backgroundImage="url(Nijigasaki10.png)";
+          }
+          if(character[SelectNumber-1]==11){
+            B[i][j].style.backgroundImage="url(Nijigasaki11.png)";
+          }
+          if(character[SelectNumber-1]==12){
+            B[i][j].style.backgroundImage="url(Nijigasaki12.png)";
+          }
+        }
+        if(selected_val.value=="Liella"){
+          if(character[SelectNumber-1]==1){
+            B[i][j].style.backgroundImage="url(Liella1.png)";
+          }
+          if(character[SelectNumber-1]==2){
+            B[i][j].style.backgroundImage="url(Liella2.png)";
+          }
+          if(character[SelectNumber-1]==3){
+            B[i][j].style.backgroundImage="url(Liella3.png)";
+          }
+          if(character[SelectNumber-1]==4){
+            B[i][j].style.backgroundImage="url(Liella4.png)";
+          }
+          if(character[SelectNumber-1]==5){
+            B[i][j].style.backgroundImage="url(Liella5.png)";
+          }
+          if(character[SelectNumber-1]==6){
+            CB[i][j].style.backgroundImage="url(Liella6.png)";
+          }
+          if(character[SelectNumber-1]==7){
+            B[i][j].style.backgroundImage="url(Liella7.png)";
+          }
+          if(character[SelectNumber-1]==8){
+            B[i][j].style.backgroundImage="url(Liella8.png)";
+          }
+          if(character[SelectNumber-1]==9){
+            B[i][j].style.backgroundImage="url(Liella9.png)";
+          }
+          if(character[SelectNumber-1]==10){
+            B[i][j].style.backgroundImage="url(Liella10.png)";
+          }
+          if(character[SelectNumber-1]==11){
+            B[i][j].style.backgroundImage="url(Liella11.png)";
+          }
+        }
+        B[i][j].style.backgroundSize="cover";
+        B[i][j].style.backgroundRepeat="no-repeat";
       }
     }
   }
-  console.log(B);
 }
 
 //以下STARTを押したときに動く関数
@@ -120,13 +507,20 @@ function buttonclick(){
   selected_val = document.getElementById("school");
   console.log(selected_val.value);
   if(selected_val.value=="Nijigasaki"){
-    const checkboxes=document.querySelectorAll('input[name="checkItem"]:checked');
+    const checkboxes=document.querySelectorAll('input[name="NijiCheck"]:checked');
     for(let i=0;i<9;i++){
       character[i]=checkboxes[i].value;
       CheckPlace1.push(Niji[checkboxes[i].value]);
     }
   }
-  if(selected_val.value=="μ's"){
+  if(selected_val.value=="Liella"){
+    const checkboxes=document.querySelectorAll('input[name="LiellaCheck"]:checked');
+    for(let i=0;i<9;i++){
+      character[i]=checkboxes[i].value;
+      CheckPlace1.push(Liella[checkboxes[i].value]);
+    }
+  }
+  if(selected_val.value=="μs"){
     for(let i=0;i<9;i++){
       CheckPlace1.push(μ[i])
     }
@@ -136,8 +530,6 @@ function buttonclick(){
       CheckPlace1.push(Aq[i]);
     }
   }
-  console.log(CheckPlace1);
-  console.log(question);
 
   init();
 }
@@ -264,8 +656,6 @@ function setting(){
       }
     }
   }
-  console.log(CheckPlace3,CheckPlace4);
-  console.log(Final);
 }
 
 function Check1(){
@@ -478,18 +868,145 @@ function Anser(){
       break;
     }
   }
-  console.log(Final);
-  console.log(count);
-  console.log(A);
 }
 
 function change(){
   for (let i = 0; i < 9; i++) {
     for (let j = 0; j < 9; j++) {
       if(question[i][j]==0){
-        let img=document.createElement("img");
-        img.src=(selected_val.value+character[Final[i][j]-1]+".png");
-        B[i][j].appendChild(img);
+        if(selected_val.value=="μs"){
+          if(Final[i][j]==1){
+            B[i][j].style.backgroundImage="url(μs1.png)";
+          }
+          if(Final[i][j]==2){
+            B[i][j].style.backgroundImage="url(μs2.png)";
+          }
+          if(Final[i][j]==3){
+            B[i][j].style.backgroundImage="url(μs3.png)";
+          }
+          if(Final[i][j]==4){
+            B[i][j].style.backgroundImage="url(μs4.png)";
+          }
+          if(Final[i][j]==5){
+            B[i][j].style.backgroundImage="url(μs5.png)";
+          }
+          if(Final[i][j]==6){
+            B[i][j].style.backgroundImage="url(μs6.png)";
+          }
+          if(Final[i][j]==7){
+            B[i][j].style.backgroundImage="url(μs7.png)";
+          }
+          if(Final[i][j]==8){
+            B[i][j].style.backgroundImage="url(μs8.png)";
+          }
+          if(Final[i][j]==9){
+            B[i][j].style.backgroundImage="url(μs9.png)";
+          }
+        }
+        if(selected_val.value=="Aqours"){
+          if(Final[i][j]==1){
+            B[i][j].style.backgroundImage="url(Aqours1.png)";
+          }
+          if(Final[i][j]==2){
+            B[i][j].style.backgroundImage="url(Aqours2.png)";
+          }
+          if(Final[i][j]==3){
+            B[i][j].style.backgroundImage="url(Aqours3.png)";
+          }
+          if(Final[i][j]==4){
+            B[i][j].style.backgroundImage="url(Aqours4.png)";
+          }
+          if(Final[i][j]==5){
+            B[i][j].style.backgroundImage="url(Aqours5.png)";
+          }
+          if(Final[i][j]==6){
+            B[i][j].style.backgroundImage="url(Aqours6.png)";
+          }
+          if(Final[i][j]==7){
+            B[i][j].style.backgroundImage="url(Aqours7.png)";
+          }
+          if(Final[i][j]==8){
+            B[i][j].style.backgroundImage="url(Aqours8.png)";
+          }
+          if(Final[i][j]==9){
+            B[i][j].style.backgroundImage="url(Aqours9.png)";
+          }
+        }
+        if(selected_val.value=="Nijigasaki"){
+          if(character[Final[i][j]-1]==1){
+            B[i][j].style.backgroundImage="url(Nijigasaki1.png)";
+          }
+          if(character[Final[i][j]-1]==2){
+            B[i][j].style.backgroundImage="url(Nijigasaki2.png)";
+          }
+          if(character[Final[i][j]-1]==3){
+            B[i][j].style.backgroundImage="url(Nijigasaki3.png)";
+          }
+          if(character[Final[i][j]-1]==4){
+            B[i][j].style.backgroundImage="url(Nijigasaki4.png)";
+          }
+          if(character[Final[i][j]-1]==5){
+            B[i][j].style.backgroundImage="url(Nijigasaki5.png)";
+          }
+          if(character[Final[i][j]-1]==6){
+            B[i][j].style.backgroundImage="url(Nijigasaki6.png)";
+          }
+          if(character[Final[i][j]-1]==7){
+            B[i][j].style.backgroundImage="url(Nijigasaki7.png)";
+          }
+          if(character[Final[i][j]-1]==8){
+            B[i][j].style.backgroundImage="url(Nijigasaki8.png)";
+          }
+          if(character[Final[i][j]-1]==9){
+            B[i][j].style.backgroundImage="url(Nijigasaki9.png)";
+          }
+          if(character[Final[i][j]-1]==10){
+            B[i][j].style.backgroundImage="url(Nijigasaki10.png)";
+          }
+          if(character[Final[i][j]-1]==11){
+            B[i][j].style.backgroundImage="url(Nijigasaki11.png)";
+          }
+          if(character[Final[i][j]-1]==12){
+            B[i][j].style.backgroundImage="url(Nijigasaki12.png)";
+          }
+        }
+        if(selected_val.value=="Liella"){
+          if(character[Final[i][j]-1]==1){
+            B[i][j].style.backgroundImage="url(Liella1.png)";
+          }
+          if(character[Final[i][j]-1]==2){
+            B[i][j].style.backgroundImage="url(Liella2.png)";
+          }
+          if(character[Final[i][j]-1]==3){
+            B[i][j].style.backgroundImage="url(Liella3.png)";
+          }
+          if(character[Final[i][j]-1]==4){
+            B[i][j].style.backgroundImage="url(Liella4.png)";
+          }
+          if(character[Final[i][j]-1]==5){
+            B[i][j].style.backgroundImage="url(Liella5.png)";
+          }
+          if(character[Final[i][j]-1]==6){
+            CB[i][j].style.backgroundImage="url(Liella6.png)";
+          }
+          if(character[Final[i][j]-1]==7){
+            B[i][j].style.backgroundImage="url(Liella7.png)";
+          }
+          if(character[Final[i][j]-1]==8){
+            B[i][j].style.backgroundImage="url(Liella8.png)";
+          }
+          if(character[Final[i][j]-1]==9){
+            B[i][j].style.backgroundImage="url(Liella9.png)";
+          }
+          if(character[Final[i][j]-1]==10){
+            B[i][j].style.backgroundImage="url(Liella10.png)";
+          }
+          if(character[Final[i][j]-1]==11){
+            B[i][j].style.backgroundImage="url(Liella11.png)";
+          }
+        }
+        B[i][j].style.backgroundSize="cover";
+        B[i][j].style.backgroundRepeat="no-repeat";
       }
     }
   }
@@ -500,10 +1017,9 @@ function Delete(){
   for(let i=0;i<9;i++){
     for(let j=0;j<9;j++){
       if(place==B[i][j]){
-        B[i][j].lastElementChild.remove();
+        B[i][j].style.backgroundImage="none";
         Final[i][j]=0;
       }
     }
   }
-  console.log(Final);
 }
