@@ -172,7 +172,7 @@ function init() {
             B[i][j].style.backgroundImage="url(Liella5.png)";
           }
           if(character[Final[i][j]-1]==6){
-            CB[i][j].style.backgroundImage="url(Liella6.png)";
+            B[i][j].style.backgroundImage="url(Liella6.png)";
           }
           if(character[Final[i][j]-1]==7){
             B[i][j].style.backgroundImage="url(Liella7.png)";
@@ -477,7 +477,7 @@ function selectClick(e) {
             B[i][j].style.backgroundImage="url(Liella5.png)";
           }
           if(character[SelectNumber-1]==6){
-            CB[i][j].style.backgroundImage="url(Liella6.png)";
+            B[i][j].style.backgroundImage="url(Liella6.png)";
           }
           if(character[SelectNumber-1]==7){
             B[i][j].style.backgroundImage="url(Liella7.png)";
@@ -987,7 +987,7 @@ function change(){
             B[i][j].style.backgroundImage="url(Liella5.png)";
           }
           if(character[Final[i][j]-1]==6){
-            CB[i][j].style.backgroundImage="url(Liella6.png)";
+            B[i][j].style.backgroundImage="url(Liella6.png)";
           }
           if(character[Final[i][j]-1]==7){
             B[i][j].style.backgroundImage="url(Liella7.png)";
